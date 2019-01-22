@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an headless vnc image based on Ubuntu
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Simon Hofmann "simon.hofmann@consol.de"
 ENV REFRESHED_AT 2018-10-29
@@ -46,7 +46,7 @@ RUN $INST_SCRIPTS/install_custom_fonts.sh
 
 ### Install xvnc-server & noVNC - HTML5 based VNC viewer
 RUN $INST_SCRIPTS/tigervnc.sh
-#RUN $INST_SCRIPTS/no_vnc.sh
+RUN $INST_SCRIPTS/no_vnc.sh
 
 ### Install firefox and chrome browser
 #RUN $INST_SCRIPTS/firefox.sh
